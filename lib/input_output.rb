@@ -1,15 +1,19 @@
-#Manges the Input / Output
+#Manages the Input / Output and passes input to calculator
 class InputOutput
 
-  def initialize input
-    @input = input
+  def initialize
     @calculator = Calculator.new
   end
 
-  def parse
-    @input = @input.split(" ")
-    [@input[0],@input[1].to_i]
+  def input
+     Kernel.gets
   end
+
+  def parse input
+    @input = input.split(" ")
+    [@input[0], @input[1].to_i]
+  end
+
   def result
     return @calculator.+(@input[1]) if @input[0]='add'
     return @calculator.-(@input[1]) if @input[0]='subtract'
@@ -18,4 +22,7 @@ class InputOutput
     return @calculator.reset(@input[1]) if @input[0]='cancel'
   end
 
+  def exit_method
+    Process.exit
+  end
 end
