@@ -6,7 +6,7 @@ class InputOutput
   end
 
   def input
-     Kernel.gets
+    Kernel.gets
   end
 
   def parse input
@@ -14,6 +14,12 @@ class InputOutput
     [@input[0], @input[1].to_i]
   end
 
+
+  def exit_method
+    Process.exit
+  end
+
+  private
   def result
     return @calculator.+(@input[1]) if @input[0]='add'
     return @calculator.-(@input[1]) if @input[0]='subtract'
@@ -22,7 +28,4 @@ class InputOutput
     return @calculator.reset(@input[1]) if @input[0]='cancel'
   end
 
-  def exit_method
-    Process.exit
-  end
 end
