@@ -48,14 +48,14 @@ describe Calculator do
           }.to_not raise_exception
         end
       end
+    end
 
-      context "reset" do
-        it 'should reset ' do
-          calculator = Calculator.new()
-          expect(calculator.reset).to eq(0)
-        end
-
+    context "reset" do
+      it 'should reset ' do
+        calculator = Calculator.new()
+        expect(calculator.reset).to eq(0)
       end
+
     end
   end
 end
