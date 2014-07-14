@@ -3,15 +3,16 @@ require 'spec_helper'
 describe Parser do
 
 
-  context "parsing" do
+  context "Result Calculation" do
 
-    it 'should be [add,5] for "Add 5"' do
-      expect(Parser.new(Router.new(Calculator.new)).parse("add 5")).to eq(["add", 5])
+    it 'should be 5 for "add 5"' do
+      expect(Parser.new(Router.new(Calculator.new),("add 5")).operation).to eq(5.0)
     end
   end
-  context 'Result calculation' do
-    it 'should return 5 for add 5 with initial state 0' do
-      expect(Parser.new(Router.new(Calculator.new)).operation("add 5")).to eq(5.0)
+  context 'Parsing' do
+    it 'should return [add,5] for "add 5"' do
+      parser = Parser.new(Router.new(Calculator.new),("add 5"))
+      expect([parser.operator,parser.operand]).to eq(["add",5])
     end
   end
 end

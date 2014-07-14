@@ -1,17 +1,14 @@
 #Parses the input and passes input to calculator
 class Parser
-  def initialize router
+  attr_reader :operator,:operand
+  def initialize router , input
     @router = router
-  end
-
-  def parse input
     input = input.split(" ")
     @operator , @operand = input[0], input[1].to_f
   end
 
-  def operation input
-    parsed_input = parse input
-    @router.result parsed_input
+  def operation
+    @router.result [@operator,@operand]
   end
 
 end
