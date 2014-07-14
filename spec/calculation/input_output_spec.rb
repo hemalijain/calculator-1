@@ -15,13 +15,13 @@ describe InputOutput do
     it 'should return 5 for add 5 with initial state 0' do
       allow(Kernel).to receive(:gets).and_return("add 5")
       expect(Kernel).to receive(:puts).with(5)
-      io_operation.output(Router.new(Calculator.new))
+      io_operation.output(OperationsHistory.new,Calculator.new)
     end
 
     it 'should return 5 for add 5 with initial state 0' do
       allow(Kernel).to receive(:gets).and_return("kickass")
       expect(Kernel).to receive(:puts).with("Wrong command")
-      io_operation.output(Router.new(Calculator.new))
+      io_operation.output(OperationsHistory.new,Calculator.new)
     end
 
   end

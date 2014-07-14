@@ -3,14 +3,14 @@ class InputOutput
   def input
     Kernel.gets
   end
-  def output router
-    @parser = Parser.new(router,input)
-    Kernel.puts @parser.operation
+  def output operations_history, calculator
+    @parser = Parser.new(calculator,operations_history,input)
+    Kernel.puts @parser.result
   end
-  def start router
+  def start operations_history, calculator
     puts "Enter command"
     while true
-      output router
+      output operations_history, calculator
     end
   end
 

@@ -108,7 +108,7 @@ describe Calculator do
     context "reset" do
       it 'should reset ' do
         calculator = Calculator.new()
-        expect(calculator.reset).to eq(0)
+        expect(calculator.cancel).to eq(0)
       end
 
     end

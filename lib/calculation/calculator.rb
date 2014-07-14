@@ -56,7 +56,7 @@ class Calculator
       @state = Math.cbrt @state
     end
 
-    def reset
+    def cancel
       @state = 0
     end
 
