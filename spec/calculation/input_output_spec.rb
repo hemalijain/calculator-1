@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe InputOutput do
-  let(:io_operation) { InputOutput.new }
+  let(:io_operation) { InputOutput.new(Parser.new(Router.new(Calculator.new))) }
 
   context "Input Check" do
     it 'check whether input received in console' do

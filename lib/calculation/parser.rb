@@ -1,7 +1,7 @@
 #Parses the input and passes input to calculator
 class Parser
-  def initialize
-    @router = Router.new
+  def initialize router
+    @router = router
   end
 
   def parse input

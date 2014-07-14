@@ -5,54 +5,55 @@ class Calculator
   end
 
     def + value
-      value + @state
+      @state = value + @state
     end
 
     def - value
-      value - @state
+      @state = @state - value
     end
 
     def * value
-      value * @state
+
+      @state = value * @state
     end
 
     def / value
       begin
         if value!=0
-          @state / value
+          @state = @state / value
         end
       rescue
         puts 'Cannot Divide by zero'
       end
     end
 
-    def abs value
-      value.abs
+    def abs
+      @state = @state.abs
     end
 
 
-    def neg value
-      -(value)
+    def neg
+      @state = -(@state)
     end
 
-    def sqrt value
+    def sqrt
       begin
-        Math.sqrt value
+        @state = Math.sqrt @state
       rescue
         puts "Returns Complex number"
       end
     end
 
-    def sqr value
-      value ** 2
+    def sqr
+      @state = @state ** 2
     end
 
-    def cube value
-      value ** 3
+    def cube
+      @state = @state ** 3
     end
 
-    def cubert value
-      Math.cbrt value
+    def cubert
+      @state = Math.cbrt @state
     end
 
     def reset

@@ -1,25 +1,35 @@
 #Invokes the calculator operations and passes the output to parser
 class Router
-  def initialize
-    @calculator = Calculator.new
+  def initialize calculator
+    @calculator = calculator
   end
 
   def result input
     case input[0]
-    when 'add'
-    @calculator.+(input[1])
-    when 'subtract'
-    @calculator.-(input[1])
-    when 'multiply'
-    @calculator.*(input[1])
-    when 'divide'
-    @calculator./(input[1])
-    when 'cancel'
-    return @calculator.reset()
-    when 'exit'
-    exit_method
-    else
-    return "Wrong command"
+      when 'add'
+        @calculator.+(input[1])
+      when 'subtract'
+        @calculator.-(input[1])
+      when 'multiply'
+        @calculator.*(input[1])
+      when 'divide'
+        @calculator./(input[1])
+      when 'sqrt'
+        @calculator.sqrt
+      when 'sqr'
+        @calculator.sqr
+      when 'cubert'
+        @calculator.cubert
+      when 'cube'
+        @calculator.cube
+      when 'neg'
+        @calculator.neg
+      when 'cancel'
+        return @calculator.reset()
+      when 'exit'
+        exit_method
+      else
+        return "Wrong command"
     end
   end
 
