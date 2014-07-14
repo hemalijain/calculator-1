@@ -1,18 +1,16 @@
 #Manages the Input / Output
 class InputOutput
-  def initialize parser
-    @parser = parser
-  end
   def input
     Kernel.gets
   end
-  def output
-    Kernel.puts @parser.operation input
+  def output router
+    @parser = Parser.new(router,input)
+    Kernel.puts @parser.operation
   end
-  def start
+  def start router
     puts "Enter command"
     while true
-      output
+      output router
     end
   end
 

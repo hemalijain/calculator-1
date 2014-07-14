@@ -9,11 +9,10 @@ class Application
   def initialize
     @calculator = Calculator.new
     @router = Router.new @calculator
-    @parser = Parser.new @router
-    @input_output = InputOutput.new @parser
+    @input_output = InputOutput.new
   end
   def run
-      @input_output.start
+      @input_output.start @router
   end
 end
 #Application.new.run
