@@ -1,9 +1,8 @@
 #Calculates cube
-class CubeCommand
-  def initialize calculator
-    @calculator = calculator
-  end
+require_relative 'command'
+class CubeCommand < Command
   def execute
+    store
     @calculator.cube
   end
 end

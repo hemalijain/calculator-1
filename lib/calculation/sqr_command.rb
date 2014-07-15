@@ -1,9 +1,7 @@
 #Calculates square
-class SqrCommand
-  def initialize calculator
-    @calculator = calculator
-  end
+class SqrCommand < Command
   def execute
+    store
     @calculator.sqr
   end
 end

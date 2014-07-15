@@ -1,5 +1,6 @@
-class NullCommand
+#executes wrong commands
+class NullCommand < Command
   def execute
-    "Wrong command"
+    "Wrong Command"
   end
 end

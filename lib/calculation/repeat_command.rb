@@ -1,9 +1,11 @@
 #Repeats last n number of commands
-class RepeatCommand
-  def initialize calculator,operations_history
-    @calculator = calculator
-  end
+class RepeatCommand < Command
   def execute
-    operations_history.retrieve()
+     operations_to_execute = @operations_history.retrieve(@operand)
+     result = 0
+     operations_to_execute.each do |operation|
+      result =  operation.execute
+     end
+    result
   end
 end

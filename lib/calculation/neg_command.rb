@@ -1,9 +1,8 @@
 #Performs negation
-class NegCommand
-  def initialize calculator
-    @calculator = calculator
-  end
+require_relative 'command'
+class NegCommand < Command
   def execute
+    store
     @calculator.neg
   end
 end

@@ -8,44 +8,34 @@ class Parser
   end
 
   def result
+
     case @operator
       when 'add'
-        command = AddCommand.new(@calculator,@operand)
-        @operations_history.store command
+        AddCommand.new(@calculator,@operations_history,@operand)
       when 'subtract'
-        command = SubtractCommand.new(@calculator,@operand)
-        @operations_history.store command
+        SubtractCommand.new(@calculator,@operations_history,@operand)
       when 'multiply'
-        command = MultiplyCommand.new(@calculator,@operand)
-        @operations_history.store command
+        MultiplyCommand.new(@calculator,@operations_history,@operand)
       when 'divide'
-        command = DivideCommand.new(@calculator,@operand)
-        @operations_history.store command
+        DivideCommand.new(@calculator,@operations_history,@operand)
       when 'sqrt'
-        command = SqrtCommand.new(@calculator)
-        @operations_history.store command
+        SqrtCommand.new(@calculator,@operations_history)
       when 'sqr'
-        command = SqrCommand.new(@calculator)
-        @operations_history.store command
+        SqrCommand.new(@calculator,@operations_history)
       when 'cubert'
-        command = CubertCommand.new(@calculator)
-        @operations_history.store command
+        CubertCommand.new(@calculator,@operations_history)
       when 'cube'
-        command = CubeCommand.new(@calculator)
-        @operations_history.store command
+        CubeCommand.new(@calculator,@operations_history)
       when 'neg'
-        command = NegCommand.new(@calculator)
-        @operations_history.store command
+        NegCommand.new(@calculator,@operations_history)
       when 'cancel'
-        command = CancelCommand.new(@calculator)
-        @operations_history.store command
+        CancelCommand.new(@calculator,@operations_history)
       when 'exit'
-        command = ExitCommand.new
+        ExitCommand.new(@calculator,@operations_history)
       when 'repeat'
-        #command = RepeatCommand.new(@calculator)
+        RepeatCommand.new(@calculator,@operations_history,@operand)
       else
-        command = NullCommand.new
+        NullCommand.new(@calculator,@operations_history)
     end
-    command.execute
   end
 end

@@ -2,6 +2,7 @@ require_relative 'calculation/input_output'
 require_relative 'calculation/calculator'
 require_relative 'calculation/parser'
 require_relative 'calculation/operations_history'
+require_relative 'calculation/command'
 require_relative 'calculation/add_command'
 require_relative 'calculation/subtract_command'
 require_relative 'calculation/multiply_command'
@@ -30,4 +31,4 @@ class Application
       @input_output.start @operations_history,@calculator
   end
 end
-#Application.new.run
+Application.new.run

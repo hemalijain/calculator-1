@@ -1,10 +1,7 @@
 #Performs Subtraction
-class SubtractCommand
-  def initialize calculator, operand
-    @calculator = calculator
-    @operand = operand
-  end
+class SubtractCommand < Command
   def execute
+    store
     @calculator.-(@operand)
   end
 end

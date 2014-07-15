@@ -1,10 +1,8 @@
+require_relative 'command'
 #Performs addition
-class AddCommand
-  def initialize calculator,operand
-    @calculator = calculator
-    @operand = operand
-  end
+class AddCommand < Command
   def execute
+    store
     @calculator.+(@operand)
   end
 end

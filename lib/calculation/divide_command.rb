@@ -1,10 +1,8 @@
 #Performs Division
-class DivideCommand
-  def initialize calculator, operand
-    @calculator = calculator
-    @operand = operand
-  end
+require_relative 'command'
+class DivideCommand < Command
   def execute
+    store
     @calculator./(@operand)
   end
 end

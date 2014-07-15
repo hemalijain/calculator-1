@@ -1,9 +1,8 @@
 #Calculates cubert
-class CubertCommand
-  def initialize calculator
-    @calculator = calculator
-  end
+require_relative 'command'
+class CubertCommand < Command
   def execute
+    store
     @calculator.cubert
   end
 end

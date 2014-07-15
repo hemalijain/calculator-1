@@ -1,9 +1,7 @@
 #Calculates square root
-class SqrtCommand
-  def initialize calculator
-    @calculator = calculator
-  end
+class SqrtCommand < Command
   def execute
+    store
     @calculator.sqrt
   end
 end

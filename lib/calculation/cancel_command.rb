@@ -1,8 +1,6 @@
 #Resets the value to zero
-class CancelCommand
-  def initialize calculator
-    @calculator = calculator
-  end
+require_relative 'command'
+class CancelCommand < Command
   def execute
     @calculator.cancel
   end

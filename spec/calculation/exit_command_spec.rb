@@ -4,6 +4,6 @@ describe ExitCommand do
 
   it 'should return 8 and for 2' do
     expect(Process).to receive(:exit)
-    ExitCommand.new.execute
+    ExitCommand.new(Calculator.new(0),OperationsHistory.new).execute
   end
 end

@@ -1,5 +1,6 @@
 #Exits from the program
-class ExitCommand
+require_relative 'command'
+class ExitCommand < Command
   def execute
     Process.exit
   end

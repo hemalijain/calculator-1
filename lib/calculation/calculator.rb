@@ -1,5 +1,6 @@
 #Performs arithmetic operations
 class Calculator
+  attr_reader :state
   def initialize initial_state=0
     @state=initial_state
   end

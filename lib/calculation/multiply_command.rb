@@ -1,10 +1,8 @@
 #Performs multiplication
-class MultiplyCommand
-  def initialize calculator, operand
-    @calculator = calculator
-    @operand = operand
-  end
+require_relative 'command'
+class MultiplyCommand < Command
   def execute
+    store
     @calculator.*(@operand)
   end
 end

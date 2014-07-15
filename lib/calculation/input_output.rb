@@ -4,8 +4,8 @@ class InputOutput
     Kernel.gets
   end
   def output operations_history, calculator
-    @parser = Parser.new(calculator,operations_history,input)
-    Kernel.puts @parser.result
+    command = (Parser.new(calculator,operations_history,input)).result
+    Kernel.puts command.execute
   end
   def start operations_history, calculator
     puts "Enter command"
