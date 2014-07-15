@@ -7,8 +7,14 @@ class Command
     @operations_history = operations_history
   end
   def execute
-    raise 'Not implemented'
+    store
+    execute_operation
   end
+
+  def execute_operation
+
+  end
+
   def store
       @operations_history.store self
   end

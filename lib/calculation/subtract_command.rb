@@ -1,7 +1,7 @@
 #Performs Subtraction
 class SubtractCommand < Command
-  def execute
-    store
+  def execute_operation
+
     @calculator.-(@operand)
   end
 end

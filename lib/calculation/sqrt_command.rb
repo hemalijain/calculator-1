@@ -1,7 +1,7 @@
 #Calculates square root
 class SqrtCommand < Command
-  def execute
-    store
+  def execute_operation
+
     @calculator.sqrt
   end
 end

@@ -31,4 +31,4 @@ class Application
       @input_output.start @operations_history,@calculator
   end
 end
-Application.new.run
+#Application.new.run
